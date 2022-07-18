@@ -212,6 +212,11 @@ impl<M: Muxer, WO: WriteOwned, WS: WriteSeek> Context<M, WO, WS> {
     pub fn writer(&self) -> &Writer<WO, WS> {
         &self.writer
     }
+
+    /// Returns the underlying writer, mutably.
+    pub fn writer_mut(&mut self) -> &mut Writer<WO, WS> {
+        &mut self.writer
+    }
 }
 
 /// Format descriptor.
